@@ -37,16 +37,32 @@ Unificar los procesos catastrales y registrales mediante workflows automatizados
 
 ```
 puente-workflows/
-├── workflows/
-│   ├── catastro/           # Workflows específicos del catastro
-│   ├── rpp/                # Workflows del Registro Público
-│   ├── unificados/         # Workflows que integran ambos sistemas
-│   └── base/               # Clases base y utilidades
-├── models/                 # Modelos de datos específicos
-├── services/               # Servicios de integración
-├── templates/              # Plantillas de documentos
-└── examples/               # Ejemplos de uso
+├── puente/                           # Plugin MuniStream (SoC)
+│   ├── __init__.py                  # Configuración del módulo
+│   ├── catastral_workflows.py       # Punto de entrada principal (DRY)
+│   ├── actualizacion_catastral_unificada.py     # Un workflow (SoC)
+│   ├── inscripcion_escritura_unificada.py       # Un workflow (SoC)
+│   ├── registro_propiedad_nueva.py              # Un workflow (SoC)
+│   ├── certificado_libertad_gravamen.py         # Un workflow (SoC)
+│   └── avaluo_catastral_unificado.py            # Un workflow (SoC)
+├── workflows/                # Implementaciones base (legacy)
+│   ├── base/                # Clases base reutilizables (DRY)
+│   └── unificados/          # Workflows combinados
+├── services/                # Servicios de integración
+├── models/                  # Modelos de datos específicos
+├── templates/               # Plantillas de documentos
+├── examples/                # Ejemplos de uso
+├── munistream.yaml          # Configuración del plugin MuniStream
+└── requirements.txt         # Dependencias Python
 ```
+
+## Metodologías de Desarrollo
+
+Este proyecto sigue estrictamente las metodologías:
+
+- **Separation of Concerns (SoC)**: Un workflow por archivo, responsabilidades únicas
+- **DRY (Don't Repeat Yourself)**: Reutilización de componentes y configuraciones
+- **KISS (Keep It Simple, Stupid)**: Código simple, legible y directo
 
 ## Workflows Principales
 

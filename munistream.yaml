@@ -1,0 +1,16 @@
+name: puente-catastral-workflows
+version: "1.0.0"
+description: "Workflows unificados para modernización catastral con vinculación bidireccional Catastro-RPP en tiempo real"
+author: "Equipo PUENTE Catastral"
+
+workflows:
+  - module: puente.catastral_workflows
+    function: create_actualizacion_catastral_unificada_workflow
+  - module: puente.catastral_workflows
+    function: create_inscripcion_escritura_unificada_workflow
+  - module: puente.catastral_workflows
+    function: create_registro_propiedad_nueva_workflow
+  - module: puente.catastral_workflows
+    function: create_certificado_libertad_gravamen_workflow
+  - module: puente.catastral_workflows
+    function: create_avaluo_catastral_unificado_workflow
